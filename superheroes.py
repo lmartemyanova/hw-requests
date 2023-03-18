@@ -1,5 +1,3 @@
-from pprint import pprint
-
 import requests
 
 class Superheroes:
@@ -21,17 +19,6 @@ class Superheroes:
             if person['name'] == self.name:
                 self.id = person['id']
                 return self.id
-
-    def get_info(self):
-        '''
-        GET superhero complete informations
-        :return: info
-        '''
-        self.get_id()
-        url = self.url + "/id/" + str(self.id) + ".json"
-        response = requests.get(url)
-        info = pprint(response.json(), sort_dicts=False)
-        return info
 
     def get_powerstats(self):
         '''
@@ -61,4 +48,3 @@ cap = Superheroes('Captain America')
 thanos = Superheroes('Thanos')
 
 print(compare_intelligence(hulk, cap, thanos))
-
