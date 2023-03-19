@@ -41,10 +41,3 @@ def compare_intelligence(*args):
     max_hero = ''.join([key for key, value in intelligences.items() if value == max_intelligence])
     res = f'Наибольший интеллект у супергероя {max_hero}: {max_intelligence}'
     return res
-
-
-hulk = Superheroes('Hulk')
-cap = Superheroes('Captain America')
-thanos = Superheroes('Thanos')
-
-print(compare_intelligence(hulk, cap, thanos))
